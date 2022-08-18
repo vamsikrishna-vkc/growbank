@@ -1,0 +1,28 @@
+
+                <button type="button" class= "btn btn-danger"href=""routerLink="/account">Back to Account</button>
+                <h2>Transaction Details</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Recieptant Account</th>
+                            <th> type</th>
+                            <th> amount</th>
+                            <th> date </th>
+                            <th> debit/credit</th>
+                            <th>purpose</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <ng-container  *ngFor="let t of transactions">
+                            <tr *ngIf="user.accountNo==t.faccount||user.accountNo==t.taccount||user.email==t.faccount||user.email==t.taccount">
+                                <td>{{ t.taccount!=undefined?((user.accountNo==t.faccount||user.email==t.faccount)?t.taccount:t.faccount):"Admin" }}</td>
+                                <td>{{ t.type }}</td>
+                                <td>Rs. {{ t.amount }}</td>
+                                <td>{{t.tdate?t.tdate.split("T")[0]:""}}</td>
+                                <td>{{t.taccount?((user.accountNo==t.faccount||user.email==t.faccount)?"debit":"credit"):(t.type=="withdrawl"?"debit":"credit")}}</td>
+                                <td>{{t.remark}}</td>
+                            </tr>
+                        </ng-container>
+                    </table>
+                

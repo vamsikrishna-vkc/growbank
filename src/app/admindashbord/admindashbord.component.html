@@ -1,0 +1,134 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" class="head">
+        <h2>Make Withdrawals</h2>
+    </div>
+    <br>
+    <div class="panel-body">
+        <form (ngSubmit)="withdrawal()">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Type</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="type"
+                    [(ngModel)]="wtransaction.type" disabled>
+            </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> Withdrawal from</label>
+            <input required type="text" class="form-control" id="exampleInputPassword5" name="faccount" [(ngModel)]="wtransaction.faccount">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> Withdraw Amount</label>
+            <input required type="number" class="form-control" id="exampleInputPassword5" name="amount" [(ngModel)]="wtransaction.amount" [value]="0">
+        </div>
+        <button type="submit" class="btn btn-primary" [ngClass]="{'disabled':isInVaildone()}">Withdraw</button>
+    </form>
+    </div>
+</div>
+<br>
+<hr>
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading" class="head">
+        <h2>Make Deposit</h2>
+    </div>
+    <br>
+    <div class="panel-body">
+        <form (ngSubmit)="deposit()">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Type</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="type"
+                    [(ngModel)]="transaction.type">
+                <sub *ngIf="isTypeInVaild()" style="color:red">type can be either RTGS, UPI OR NEFT</sub>
+            </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> Deposit to</label>
+            <input required type="text" class="form-control" id="exampleInputPassword5" name="faccount" [(ngModel)]="transaction.faccount">
+            <sub *ngIf="!isAccountVaild()" style="color:red">Invalid account</sub>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"> Deposit Amount</label>
+            <input required type="number" class="form-control" id="exampleInputPassword5" name="amount" [(ngModel)]="transaction.amount" [value]="0">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [ngClass]="{'disabled':isInVaild()}">Deposit</button>
+    </form>
+    </div>
+</div>
+<br>
+<hr>
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading" class="head">
+        <h2>Transactions</h2>
+    </div>
+    <br>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Amount</th>
+                    <th>Date </th>
+                    <th>type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let trans of transaction1 ">
+
+                    <td>{{ trans.taccount?trans.faccount:(trans.type=="withdrawl"?trans.faccount:"Admin")}}</td>
+                    <td>{{ trans.taccount?trans.taccount:(trans.type=="withdrawl"?"":trans.faccount)}}</td>
+                    <td>Rs.{{ trans.amount }}</td>
+                    <td>{{trans.tdate?trans.tdate.split("T")[0]:""}}</td>
+                    <td>{{trans.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<hr>
+
+
+<div class="head" >
+<h2>Customer Applied to create new account</h2>
+</div>
+<br>
+<br>
+
+<div class="panel panel-primary">
+    
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th> Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>Pin Code</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let save of savingaccount">
+
+                    <td>{{ save.fname }}</td>
+                    <td>{{save.email }}</td>
+                    <td>{{ save.phoneNo}}</td>
+                    <td>{{save.street}}</td>
+                    <td>{{ save.city}}</td>
+                    <td>{{save.pincode}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<button style="background-color: rgb(183, 236, 59); border-radius: 25px;" routerLink="/admin">Logout</button>
+

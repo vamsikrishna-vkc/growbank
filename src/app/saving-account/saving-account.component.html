@@ -1,0 +1,72 @@
+
+ <button type="submit" class="btn btn-primary" onclick="" routerLink="/login" >Aready have Account</button>
+<form (ngSubmit)="save()">
+   
+    <div style="text-align:center ;"><h2>Create  Account</h2></div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"> First Name</label>
+      <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fname" [(ngModel)]="savingaccount.fname">
+      
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Middle Name</label>
+      <input required type="text" class="form-control" id="exampleInputPassword1" name="mname" [(ngModel)]="savingaccount.mname">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Last Name</label>
+      <input required type="text" class="form-control" id="exampleInputPassword1" name="lname" [(ngModel)]="savingaccount.lname">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="email" [(ngModel)]="savingaccount.email">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Phone No</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="phoneNo" [(ngModel)]="savingaccount.phoneNo">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Adhaar No</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="adhaarNo" [(ngModel)]="savingaccount.adhaarNo">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Date of Birth</label>
+        <input required type="date" class="form-control" id="exampleInputPassword1" name="dob" [(ngModel)]="savingaccount.dob">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Street</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="street" [(ngModel)]="savingaccount.street">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">City</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="city" [(ngModel)]="savingaccount.city">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Pin Code</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="pincode" [(ngModel)]="savingaccount.pincode">
+      </div>
+      <div class="mb-3">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="agreecheck" [(ngModel)]="agreecheck">
+        <label class="form-check-label" for="flexCheckDefault">
+          I agree with all the terms and conditions provided by the grow bank.
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary" [ngClass]="{'disabled':isInVaild()}">Submit</button>
+    <br>
+    <br>
+   
+  </form>
+
+

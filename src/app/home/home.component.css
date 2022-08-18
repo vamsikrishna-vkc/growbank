@@ -1,0 +1,35 @@
+.subb{
+    padding-left: 25px;
+    padding-top: 24%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+}
+
+.mainn{
+   
+  
+    background-image: url("/assets/images/homedown.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 5px;
+    
+}
+
+.subb1{
+    padding-left: 50%;
+    padding-top: 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-weight: 100;*/
+}
+
+.mainn1{
+   
+    
+    background-image: url("/assets/images/homedown3.jpg"); 
+    font-display:  url("/assets/images/logovideo");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 5px;
+}

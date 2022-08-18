@@ -1,0 +1,75 @@
+
+<button type="button" class= "btn btn-danger"href=""routerLink="/account"> Back to account </button>
+<br>
+<br>
+<body>
+    <div class="container">
+        <h4>UPI TRANSACTION</h4>
+        <br>
+
+        <form (ngSubmit)="save()">
+            
+                <div class="details personal">
+                    <span class="title"></span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="exampleInputPassword1" class="form-label">Type</label>
+                            <input type="text" placeholder="Enter your name" required disabled id="exampleInputPassword1" name="type"
+                            [(ngModel)]="transaction.type" [value]="transaction.type">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="exampleInputPassword1" class="form-label">From UPI ID</label>
+                            <input type="text" placeholder="Enter UPI ID" required disabled id="exampleInputPassword1" name="faccount"
+                            [(ngModel)]="transaction.faccount" [value]="transaction.faccount">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="exampleInputPassword1" class="form-label">To UPI ID</label>
+                            <input type="text" placeholder="ex: xyz@growbank.com" required id="exampleInputPassword1" name="taccount"
+                            [(ngModel)]="transaction.taccount" [value]="transaction.taccount">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="exampleInputPassword1" class="form-label">Amount</label>
+                            <input type="text"  required id="exampleInputPassword1" name="amount"
+                            [(ngModel)]="transaction.amount">
+                            
+                            <sub class="validation"  *ngIf="isBalanceAvailable()" style="font-weight: 500;">Available Balance Is :  {{getCurrentBalance()}}</sub>
+                            <br>
+
+                            <sub *ngIf="isBalanceAvailable()" style="color:red">Please Enter Sufficient Amount</sub> 
+                        </div>
+
+                        <div class="input-field">
+                            <label for="exampleInputPassword1">Transaction Password</label>
+                            <input type="password" id="exampleInputPassword1" required name="remark"
+                            [(ngModel)]="transaction.tpassword">
+                        </div>
+
+                        <div class="input-field">  
+                            <label for="exampleInputPassword1">Purpose</label>  
+                            <select id="Purpose" placeholder="select the purpose" required [(ngModel)]="transaction.remark" name="remark"> 
+                              <option *ngFor="let Remark of purpose " [value]="Remark">{{Remark}}</option>  
+                            </select>  
+                          </div>
+                        </div>
+                        <button [disabled]="isInVaild()" type="submit" class="btn btn-sucess" >Submit</button>
+                </div> 
+                <div class="instructions">
+                    <br>
+                    <br>
+                    <br>
+                    <h6><b>Points to Remember :</b></h6>
+                    <hr>
+                    <p>1.Don’t share your transaction password or other secured details with anyone.</p>
+                    <p>2.Turn off Auto-Saving of passwords</p>
+                    <p>3.Always ask for the confirmation of the UPI id of the recipient before you perform
+                    <p>4.Ensure you conduct necessary review of a merchant before performing a transaction
+                </div>        
+            
+        </form>
+    </div>
+</body>
+

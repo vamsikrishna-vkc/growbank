@@ -1,0 +1,58 @@
+<div class="one">
+
+    <!-- Sidebar -->
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <h4 ><button class="btn btn-warning"> Welcome <b style="text-transform: uppercase">{{ us.name }} </b></button> </h4>
+                <br>
+                <a href="#" id="one" routerLink="/account" class="list-group-item list-group-item-action py-2 ripple active"><span>Account Details</span></a>
+                <span class="brsmall"></span>
+                <a href="#" id="one" routerLink="/addbn"class="list-group-item list-group-item-action py-2 active"><span>Add Beneficiary</span></a>
+                <span class="brsmall"></span>
+                <a href="#" routerLink="/imps"class="list-group-item list-group-item-action py-2 active"><span>UPI Transaction</span></a>
+                <span class="brsmall"></span>
+                <a href="#" routerLink="/neft"class="list-group-item list-group-item-action py-2 active"><span>Neft Transaction</span></a>
+                <span class="brsmall"></span>
+                <a href="#" routerLink="/rtgs" class="list-group-item list-group-item-action py-2 active"><span>RTGS Transaction</span></a>
+                <span class="brsmall"></span>
+                <a href="#" routerLink="/transaction-details" class="list-group-item list-group-item-action py-2 active"><span>Transaction-details</span></a>
+                <span class="brsmall"></span>
+                <button href="#"routerLink="/logout" class="btn btn-danger"><span>Logout</span></button>
+
+            </div>
+        </div>
+    </nav>
+    <!--Main-->
+    <main>
+        <div style="margin-top: -350px; text-align: center; height: 5px ; padding-top: 1px;">
+
+            <router-outlet name="account"></router-outlet>
+            <div class="panel-body" style="margin-left: 19%; padding-top: -5px;">
+                <h2>Account Details</h2>
+                <table class="table table-striped" style="padding-top: -100px ;">
+
+                    <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th> Name</th>
+                            <th> Email</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody class="line">
+                        <tr class="details">
+                            <td><b>{{ us.accountNo }}</b></td>
+                            <td><b>{{ us.name }}</b></td>
+                            <td><b>{{ us.email }}</b></td>
+                            <td><b>Rs.{{us.balance}}</b></td>
+                        </tr>
+                    </tbody >
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+

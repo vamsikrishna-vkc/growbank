@@ -1,0 +1,185 @@
+<div >
+  <div style="text-align:center;"><h1 style=" font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><b> GrowBank Private limited 💰</b> </h1></div>
+  <div style="padding-left:34%;"><h6 style="font-family:sans-serif ;"><b>Banking is necessary but banks are not !!</b></h6></div>
+  <nav class="navbar navbar-expand-sm ">
+    <!-- Links -->
+    
+    <ul class="navbar-nav">
+      <img src="/assets/images/bank.jpg" width="60px" height="60px">
+  
+    <li class="nav-item">
+      <a  *ngIf="!userService.isUserLoggedIn()" routerLink="/home" class="clickme info" routerLinkActive="active">Home</a>
+  </li>
+      <li class="nav-item">
+        <a *ngIf="!userService.isUserLoggedIn()" routerLink="login" class="clickme info" routerLinkActive="active">Log-In</a>
+    </li>
+    <li class="nav-item">
+      <a *ngIf="!userService.isUserLoggedIn()" routerLink="admin" class="clickme info" routerLinkActive="active">Admin</a>
+  </li>
+    <li class="nav-item">
+      <a *ngIf="!userService.isUserLoggedIn()" routerLink="register" class="clickme info" routerLinkActive="active">Register</a>
+  </li>
+  <li class="nav-item">
+    <a *ngIf="!userService.isUserLoggedIn()" routerLink="faq" class="clickme info" routerLinkActive="active">FAQ's</a>
+</li>
+
+   </ul>
+  </nav>
+  <hr>
+  
+  <div class="card">
+   
+  <div class="card-body">
+
+    <router-outlet></router-outlet>
+  </div>
+
+
+<!--Footer -->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #00C4EB"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"aria-hidden="true" ></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">GrowBank</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Financial institution licensed to deposit, withdraw and make loans. It also provide financial services such as wealth management, currency exchange and safe deposit boxes. 
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Services</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Home loans</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Gold loans</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Foreign Currency Exchange </a>
+            </p>
+            
+           
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white" routerLink="/login">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" routerLink="/register">Register</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white" routerLink="/save-account">Create Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> HYDERABAD, 500089, TS</p>
+            <p><i class="fas fa-home mr-3"></i> VISAKHAPATNAM, 530004, AP</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@growbank.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +(91) 040-999-6633</p>
+            <p><i class="fas fa-print mr-3"></i> +(91) 040-999-6634</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2022 Copyright :
+      <a class="text-white" href="#"
+         > GROWBANK</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+</div>
+</div>

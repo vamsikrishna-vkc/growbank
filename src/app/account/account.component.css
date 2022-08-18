@@ -1,0 +1,76 @@
+
+  
+  /* Sidebar */
+  .sidebar {
+   
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2px 0 0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 240px;
+    height: 450px;
+    z-index: 600;
+    box-sizing: border-box;
+  }
+  
+ 
+  .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+  
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+  
+
+  @media (max-width: 991.98px) {
+    .sidebar {
+      width: 100%;
+    }
+  }
+  .cont{
+    text-align: center;
+    padding-top: -50px;
+  }
+
+  .one{
+    background-image: url("/assets/images/account.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    
+  }
+/*
+  .line{
+    color: rgb(221, 19, 19);
+  }*/
+
+  .details
+  {
+    color: brown;
+    background-color: rgba(63, 243, 249, 0.515);
+
+  }
+
+
+.brsmall
+{
+  margin-top: .4em;
+
+}
+
+.panel-body{
+  margin-bottom: -.50em;
+}
+
+
+.log{
+  background-color: rgb(202, 11, 11);
+}

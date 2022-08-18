@@ -1,0 +1,57 @@
+<form (ngSubmit)="save()">
+    <div style="text-align:center ;"><h2>Register here</h2></div>
+    
+    <div class="mb-3">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Name</label>
+        <input required type="text" class="form-control" id="exampleInputPassword1" name="email" [(ngModel)]="user.name">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input required type="email" class="form-control" id="exampleInputPassword1" name="email" [(ngModel)]="user.email" pattern=".+@growbank.com">
+        <sub *ngIf="isInValidMail()" style="color:red">should be in format abc@growbank.com</sub>
+      </div>
+
+        <label for="exampleInputPassword1" class="form-label">Account Number</label>
+        <input required type="number" class="form-control" id="exampleInputPassword1" name="accountNo" [(ngModel)]="user.accountNo">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input required type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="user.password">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
+        <input required type="password" class="form-control" id="exampleInputPassword2" name="repassword" [(ngModel)]="user.repassword">
+        <sub *ngIf="!user.password||user.password!=user.repassword" style="color:red">must not be empty and should match with password</sub>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"> Transaction Password</label>
+        <input required type="password" class="form-control" id="exampleInputPassword3" name="transpassword" [(ngModel)]="user.tranpassword">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"> Confirm Transaction Password</label>
+        <input required type="password" class="form-control" id="exampleInputPassword4" name="re transpassword" [(ngModel)]="user.retranpassword">
+        <sub *ngIf="!user.tranpassword||user.tranpassword!=user.retranpassword" style="color:red">must not be empty and should match with transaction password </sub>
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"> Initial Deposit</label>
+        <input required type="number" class="form-control" id="exampleInputPassword5" name="balance" [(ngModel)]="user.balance">
+      </div>
+
+      <div class="mb-3">
+        <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="agreecheck" [(ngModel)]="agreecheck">
+        <label class="form-check-label" for="flexCheckDefault">
+          I agree with all the terms and conditions provided by the grow bank.
+        </label>
+      </div>
+      
+    <button type="submit" class="btn btn-primary" [ngClass]="{'disabled':isInVaild()}">Submit</button>
+  </form>
+
